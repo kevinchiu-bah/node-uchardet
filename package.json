@@ -1,0 +1,42 @@
+{
+  "name": "uchardet",
+  "version": "1.0.0",
+  "description": "Native UChardet bindings for Node",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Icemanbeta/node-uchardet.git"
+  },
+  "author": {
+    "name": "Kevin Chiu",
+    "email": "chiukk1@gmail.com"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.10.0"
+  },
+  "dependencies": {
+    "nan": "^2.10.0"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "node-gyp": "^3.6.2"
+  },
+  "scripts": {
+    "build": "node-gyp rebuild",
+    "test": "ava --verbose",
+    "start": "node lib/index.js"
+  },
+  "ava": {
+    "files": [
+      "test/**/*.js"
+    ],
+    "sources": [
+      "test/**/*.js"
+    ],
+    "concurrency": 5,
+    "failFast": false,
+    "failWithoutAssertions": false,
+    "compileEnhancements": false
+  }
+}
