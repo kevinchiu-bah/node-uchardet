@@ -1,0 +1,6 @@
+_uchardet_new
+_uchardet_delete
+_uchardet_handle_data
+_uchardet_data_end
+_uchardet_reset
+_uchardet_get_charset

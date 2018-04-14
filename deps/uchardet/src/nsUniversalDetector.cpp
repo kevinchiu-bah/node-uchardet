@@ -327,8 +327,9 @@ void nsUniversalDetector::DataEnd()
         }
       }
       //do not report anything because we are not confident of it, that's in fact a negative answer
-      if (maxProberConfidence > MINIMUM_THRESHOLD)
+      if (mCharSetProbers[maxProber] && maxProberConfidence > MINIMUM_THRESHOLD) {
         Report(mCharSetProbers[maxProber]->GetCharSetName());
+      }
     }
     break;
   case eEscAscii:
