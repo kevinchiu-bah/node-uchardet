@@ -7,7 +7,7 @@ test('Module is exporting correctly', t => {
   t.is(type, 'function');
 });
 
-test.only('Detects and returns charset encoding of file', t => {
+test('Detects and returns charset encoding of file', t => {
   const target = path.resolve(__dirname, './resources/sample.ssa');
   const charset = uchardet(target);
   const expected = 'TIS-620';
