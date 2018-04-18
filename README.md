@@ -1,6 +1,7 @@
 # node-uchardet
-> Native UChardet Binding for Node
+> Native uchardet Binding for Node
 
+For more information on the native binding: https://www.freedesktop.org/wiki/Software/uchardet/
 
 ## Install
 

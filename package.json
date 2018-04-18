@@ -1,7 +1,16 @@
 {
   "name": "uchardet",
-  "version": "1.0.0",
+  "version": "1.5.0",
   "description": "Native UChardet bindings for Node",
+  "keywords": [
+    "uchardet",
+    "libuchardet",
+    "universalchardet",
+    "freedesktop",
+    "mozilla",
+    "encoding",
+    "native"
+  ],
   "libuchardet": "0.0.6",
   "main": "lib/index.js",
   "repository": {
