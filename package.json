@@ -1,6 +1,6 @@
 {
   "name": "uchardet",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Native UChardet bindings for Node",
   "libuchardet": "0.0.6",
   "main": "lib/index.js",
