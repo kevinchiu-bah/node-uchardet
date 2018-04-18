@@ -1,6 +1,6 @@
 {
   "name": "uchardet",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "description": "Native UChardet bindings for Node",
   "libuchardet": "0.0.6",
   "main": "lib/index.js",
@@ -34,8 +34,7 @@
     "build": "node-gyp rebuild",
     "xcode": "node-gyp configure -- -f xcode",
     "test": "source .env && ava --verbose",
-    "start": "source .env && node lib/index.js",
-    "release": "np"
+    "start": "source .env && node lib/index.js"
   },
   "ava": {
     "files": [
