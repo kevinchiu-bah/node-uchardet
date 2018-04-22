@@ -41,9 +41,10 @@
   },
   "scripts": {
     "build": "node-gyp rebuild",
-    "xcode": "node-gyp configure -- -f xcode",
-    "test": "source .env && ava --verbose",
-    "start": "source .env && node lib/index.js"
+    "generate": "node_modules/node-gyp/gyp/gyp -f cmake binding.gyp --depth .",
+    "generate:xcode": "node-gyp configure -- -f xcode",
+    "test": "ava --verbose",
+    "start": "node lib/index.js"
   },
   "ava": {
     "files": [

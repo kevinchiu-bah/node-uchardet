@@ -14,7 +14,6 @@
     },
     'cflags': [
       '-std=c++11',
-      '-stdlib=libc++',
       '-Wall',
     ],
     'cflags!': [
@@ -92,12 +91,19 @@
     'conditions': [
       # OSX
       ['OS=="mac"', {
-        # TODO
+        'cflags+': [
+          '-stdlib=libc++',
+        ],
       }],
       # Linux
       ['OS=="linux"', {
-        'ldflags': [
-          # LDFlags
+        'cflags+': [
+          '-fPIC',
+          '-mfpmath=sse',
+          '-msse2',
+          '-O3',
+          '-std=gnu++11',
+          '-Wall',
         ],
       }],
       # Windows

@@ -35,20 +35,20 @@
         }]
       ]
     },
-    {
-      'target_name': 'uchardet-test',
-      'type': 'executable',
-      'dependencies': [
-        'deps/uchardet.gyp:libuchardet',
-      ],
-      'include_dirs': [
-        "deps/uchardet/src",
-        "src",
-      ],
-      'sources': [
-        './src/test.cpp',
-        './src/factory.cpp',
-      ],
-    }
+    # {
+    #   'target_name': 'uchardet-test',
+    #   'type': 'executable',
+    #   'dependencies': [
+    #     'deps/uchardet.gyp:libuchardet',
+    #   ],
+    #   'include_dirs': [
+    #     "deps/uchardet/src",
+    #     "src",
+    #   ],
+    #   'sources': [
+    #     'src/test.cpp',
+    #     'src/factory.cpp',
+    #   ],
+    # }
   ]
 }
