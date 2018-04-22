@@ -5,13 +5,9 @@
     'version_major_': '0',
     'version_minor_': '0',
     'version_revision_': '0',
-    'library_name_': 'libuchardet',
+    'product_name': 'libuchardet',
   },
   'target_defaults': {
-    'variables': {
-      'library_dir_': '<!(pwd)/build/$(BUILDTYPE)',
-      'builddir': '<(library_dir_)',
-    },
     'cflags': [
       '-std=c++11',
       '-Wall',
@@ -30,7 +26,6 @@
       'GCC_ENABLE_CPP_RTTI': 'NO',
       'MACOSX_DEPLOYMENT_TARGET': '10.12',
       'OTHER_LDFLAGS': [
-        # LDFlags
       ]
     },
     # Windows

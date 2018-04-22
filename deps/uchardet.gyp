@@ -1,11 +1,11 @@
 {
   'targets': [
     {
-      'target_name': '<(library_name_)',
+      'target_name': '<(product_name)',
       'product_prefix': 'lib',
       'type': 'shared_library',
       'defines': [
-        'PACKAGE_NAME="<(library_name_)"',
+        'PACKAGE_NAME="<(product_name)"',
         'PACKAGE_URL="<(url_)"',
         'PACKAGE_BUGREPORT="<(bugreport_)"',
         'UCHARDET_VERSION="<(version_major_).<(version_minor_).<(version_revision_)"',
@@ -72,20 +72,20 @@
               '-lstdc++',
             ],
             'ldflags': [
-              '-Wl,-R>(library_dir_)',
-              '-L>(library_dir_)',
+              '-Wl,-R>(PRODUCT_DIR)',
+              '-L>(PRODUCT_DIR)',
             ],
           }]
         ],
         'xcode_settings': {
           'OTHER_LDFLAGS': [
-            '-L>(library_dir_)'
+            '-L>(PRODUCT_DIR)'
           ]
         },
         'msvs_settings': {
           'VCLinkerTool': {
             'AdditionalLibraryDirectories': [
-              '-L>(library_dir_)'
+              '-L>(PRODUCT_DIR)'
             ]
           }
         },
@@ -96,7 +96,7 @@
             '-Wl,-exported_symbols_list <!(pwd)/symbols.list',
           ],
         }],
-        ['OS=="linux" or OS=="android"', {
+        ['OS=="linux"', {
           'cflags+': [
             '-shared',
             '-Wl,--version-script,"<!(pwd)/version.script"',

@@ -1,6 +1,6 @@
 {
   "name": "uchardet",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Native UChardet bindings for Node",
   "keywords": [
     "uchardet",
@@ -40,7 +40,7 @@
     "ava": "^0.25.0"
   },
   "scripts": {
-    "build": "node-gyp rebuild",
+    "build": "scripts/build.sh",
     "generate": "node_modules/node-gyp/gyp/gyp -f cmake binding.gyp --depth .",
     "generate:xcode": "node-gyp configure -- -f xcode",
     "test": "ava --verbose",
