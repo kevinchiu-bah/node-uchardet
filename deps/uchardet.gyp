@@ -3,7 +3,6 @@
     {
       'target_name': '<(product_name)',
       'product_prefix': 'lib',
-      'type': 'shared_library',
       'defines': [
         'PACKAGE_NAME="<(product_name)"',
         'PACKAGE_URL="<(url_)"',
@@ -75,7 +74,7 @@
               '-Wl,-R>(PRODUCT_DIR)',
               '-L>(PRODUCT_DIR)',
             ],
-          }]
+          }],
         ],
         'xcode_settings': {
           'OTHER_LDFLAGS': [
@@ -92,11 +91,13 @@
       },
       'conditions': [
         ['OS=="mac"', {
-          'cflags+': [
+          'type': 'static_library',
+          'cflags': [
             '-Wl,-exported_symbols_list <!(pwd)/symbols.list',
           ],
         }],
         ['OS=="linux"', {
+          'type': 'shared_library',
           'cflags+': [
             '-shared',
             '-Wl,--version-script,"<!(pwd)/version.script"',
