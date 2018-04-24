@@ -1,6 +1,6 @@
 {
   "name": "uchardet",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "description": "Native UChardet bindings for Node",
   "keywords": [
     "uchardet",
