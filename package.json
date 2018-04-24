@@ -41,6 +41,7 @@
   },
   "scripts": {
     "build": "scripts/build.sh",
+    "rebuild": "scripts/build.sh",
     "generate": "node_modules/node-gyp/gyp/gyp -f cmake binding.gyp --depth .",
     "generate:xcode": "node-gyp configure -- -f xcode",
     "test": "ava --verbose",

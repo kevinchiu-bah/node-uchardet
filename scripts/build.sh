@@ -4,9 +4,10 @@ CXXFLAGS=('-fPIC')
 
 CMDVARS=(
   ${SETTINGS[@]}
-  "CXXFLAGS=\"${CXXFLAGS[*]// /|}\""
 )
 
 CMD="${CMDVARS[*]// /|} node-gyp rebuild"
-echo $CMD
+
+export CXXFLAGS=\"${CXXFLAGS[*]// /|}\"
+
 eval $CMD
