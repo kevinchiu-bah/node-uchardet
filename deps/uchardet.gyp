@@ -70,9 +70,17 @@
             'libraries': [
               '-lstdc++',
             ],
+            'library_dirs': [
+              '<(module_root_dir)/build/$(BUILD_TYPE)',
+            ],
             'ldflags': [
               '-Wl,-R<(module_root_dir)/build/$(BUILDTYPE)',
+              '-Wl,-rpath=$$ORIGIN/lib.target/',
+              '-Wl,-rpath-link=$(builddir)/lib.target/',
+              '-Wl,-soname,<(product_name).so',
               '-L<(module_root_dir)/build/$(BUILDTYPE)',
+              '-L$(pwd)',
+              #'-Wl,--version-script=<(module_root_dir)/deps/version.script',
             ],
           }],
         ],
@@ -96,7 +104,7 @@
             '-Wl,-exported_symbols_list <!(pwd)/symbols.list',
           ],
         }],
-        ['OS=="linux"', {
+        ['OS=="linux" or OS=="android"', {
           'type': 'shared_library',
         }],
       ]

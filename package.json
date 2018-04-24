@@ -44,8 +44,8 @@
     "rebuild": "scripts/build.sh",
     "generate": "node_modules/node-gyp/gyp/gyp -f cmake binding.gyp --depth .",
     "generate:xcode": "node-gyp configure -- -f xcode",
-    "test": "ava --verbose",
-    "start": "node lib/index.js"
+    "test": "NODE_NO_WARNINGS=1 ava --verbose",
+    "start": "NODE_NO_WARNINGS=1 node lib/index.js"
   },
   "ava": {
     "files": [
