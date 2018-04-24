@@ -1,10 +1,10 @@
 {
   'variables': {
-    'url_': 'https://www.freedesktop.org/wiki/Software/uchardet/',
-    'bugreport_': 'https://bugs.freedesktop.org/enter_bug.cgi?product=uchardet',
-    'version_major_': '0',
-    'version_minor_': '0',
-    'version_revision_': '0',
+    'url': 'https://www.freedesktop.org/wiki/Software/uchardet/',
+    'bugreport': 'https://bugs.freedesktop.org/enter_bug.cgi?product=uchardet',
+    'version_major': '0',
+    'version_minor': '0',
+    'version_revision': '0',
     'product_name': 'libuchardet',
   },
   'target_defaults': {
@@ -25,8 +25,6 @@
       'GCC_ENABLE_CPP_EXCEPTIONS': 'YES',
       'GCC_ENABLE_CPP_RTTI': 'NO',
       'MACOSX_DEPLOYMENT_TARGET': '10.12',
-      'OTHER_LDFLAGS': [
-      ]
     },
     # Windows
     'msvs_settings': {

@@ -5,9 +5,9 @@
       'product_prefix': 'lib',
       'defines': [
         'PACKAGE_NAME="<(product_name)"',
-        'PACKAGE_URL="<(url_)"',
-        'PACKAGE_BUGREPORT="<(bugreport_)"',
-        'UCHARDET_VERSION="<(version_major_).<(version_minor_).<(version_revision_)"',
+        'PACKAGE_URL="<(url)"',
+        'PACKAGE_BUGREPORT="<(bugreport)"',
+        'UCHARDET_VERSION="<(version_major).<(version_minor).<(version_revision)"',
         'VERSION="$(UCHARDET_VERSION)"',
       ],
       'include_dirs': [
@@ -71,8 +71,8 @@
               '-lstdc++',
             ],
             'ldflags': [
-              '-Wl,-R>(PRODUCT_DIR)',
-              '-L>(PRODUCT_DIR)',
+              '-Wl,-R<(module_root_dir)/build/$(BUILDTYPE)',
+              '-L<(module_root_dir)/build/$(BUILDTYPE)',
             ],
           }],
         ],
@@ -98,11 +98,6 @@
         }],
         ['OS=="linux"', {
           'type': 'shared_library',
-          'cflags+': [
-            '-shared',
-            '-Wl,--version-script,"<!(pwd)/version.script"',
-            '-Wl,-soname,<(library_name_).so.0',
-          ],
         }],
       ]
     }
