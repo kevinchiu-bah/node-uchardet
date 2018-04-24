@@ -4,6 +4,7 @@ CXXFLAGS=('-fPIC')
 
 CMDVARS=(
   ${SETTINGS[@]}
+  "CXXFLAGS=\"${CXXFLAGS[*]// /|}\""
 )
 
 CMD="${CMDVARS[*]// /|} node-gyp rebuild"
