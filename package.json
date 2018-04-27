@@ -21,6 +21,9 @@
     "name": "Kevin Chiu",
     "email": "chiukk1@gmail.com"
   },
+  "engines": {
+    "node": "8.0.0"
+  },
   "license": "MIT",
   "os": [
     "win32",
