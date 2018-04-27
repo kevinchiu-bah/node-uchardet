@@ -1,15 +1,18 @@
 const test = require('ava');
 const path = require('path');
-const uchardet = require('../lib');
+const UChardet = require('../lib');
+
+const uchardet = new UChardet();
 
 test('Module is exporting correctly', t => {
+  const uchardet = new UChardet();
   const type = typeof(uchardet);
-  t.is(type, 'function');
+  t.is(type, 'object');
 });
 
 test('Detects and returns charset encoding of file', t => {
   const target = path.resolve(__dirname, './resources/sample.ssa');
-  const charset = uchardet(target);
+  const charset = uchardet.detect(target);
   const expected = 'TIS-620';
   t.is(charset, expected);
 });

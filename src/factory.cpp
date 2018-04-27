@@ -1,6 +1,5 @@
 #include <fstream>
 #include <iostream>
-#include "factory.hpp"
 
 bool checkFileExistence(const std::string& filename) {
   std::ifstream f(filename.c_str());

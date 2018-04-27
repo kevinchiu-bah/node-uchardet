@@ -7,19 +7,20 @@
       'target_name': 'uchardet',
       'defines': [
         'NAPI_CPP_EXCEPTIONS',
+        'VERSION="<!(node -e "process.stdout.write(require(\'./package.json\').libuchardet)")"',
       ],
       'dependencies': [
-        "<!(node -p \"require('node-addon-api').gyp\")",
         'deps/uchardet.gyp:libuchardet',
       ],
       'include_dirs': [
-        "<!@(node -p \"require('node-addon-api').include\")",
+        "<!(node -e \"require('nan')\")",
         "deps/uchardet/src",
         "src",
       ],
       'sources': [
         'src/binding.cpp',
         'src/factory.cpp',
+        'src/uchardet.cpp',
       ],
       'cflags!': [
         '-fno-exceptions'

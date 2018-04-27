@@ -1,10 +1,14 @@
 {
+  'defines': [
+    'UCHARDET_VERSION="0.0.6"'
+  ],
   'variables': {
     'url': 'https://www.freedesktop.org/wiki/Software/uchardet/',
     'bugreport': 'https://bugs.freedesktop.org/enter_bug.cgi?product=uchardet',
     'version_major': '0',
     'version_minor': '0',
     'version_revision': '0',
+    'version': '$(UCHARDET_VERSION)',
     'product_name': 'libuchardet',
   },
   'target_defaults': {
@@ -23,7 +27,7 @@
       'CLANG_CXX_LANGUAGE_STANDARD': 'c++11',
       'CLANG_CXX_LIBRARY': 'libc++',
       'GCC_ENABLE_CPP_EXCEPTIONS': 'YES',
-      'GCC_ENABLE_CPP_RTTI': 'NO',
+      'GCC_ENABLE_CPP_RTTI': 'YES',
       'MACOSX_DEPLOYMENT_TARGET': '10.12',
     },
     # Windows

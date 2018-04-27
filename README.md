@@ -20,14 +20,16 @@ yarn add node-uchardet@icemanbeta/uchardet
 ### Getting Started
 #### CommonJS
 ```js
-const uchardet = require('uchardet');
-const charset = uchardet('/path/to/file');
+const UChardet = require('uchardet');
+const uchardet = new UChardet();
+const charset = uchardet.detect('/path/to/file');
 ```
 
 #### ES6
 ```js
-import { detect } from 'uchardet'
-const charset = detect('/path/to/file');
+import * as UChardet from 'uchardet';
+const uchardet = new UChardet();
+const charset = uchardet.detect('/path/to/file');
 ```
 
 ### API
@@ -40,7 +42,7 @@ Example:
 
 ```js
 const source = './test/resources/sample.ssa';
-const charset = detect(source);
+const charset = uchardet.detect(source);
 console.log(charset);
 // => TIS-620
 ```
@@ -51,6 +53,6 @@ version()
 Example:
 
 ```js
-console.log(version());
+console.log(uchardet.version());
 // => 0.0.6
 ```

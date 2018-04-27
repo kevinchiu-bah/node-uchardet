@@ -7,7 +7,6 @@
         'PACKAGE_NAME="<(product_name)"',
         'PACKAGE_URL="<(url)"',
         'PACKAGE_BUGREPORT="<(bugreport)"',
-        'UCHARDET_VERSION="<(version_major).<(version_minor).<(version_revision)"',
         'VERSION="$(UCHARDET_VERSION)"',
       ],
       'include_dirs': [
@@ -80,7 +79,6 @@
               '-Wl,-soname,<(product_name).so',
               '-L<(module_root_dir)/build/$(BUILDTYPE)',
               '-L$(pwd)',
-              #'-Wl,--version-script=<(module_root_dir)/deps/version.script',
             ],
           }],
         ],
