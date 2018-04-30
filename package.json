@@ -22,7 +22,7 @@
     "email": "chiukk1@gmail.com"
   },
   "engines": {
-    "node": "8.0.0"
+    "node": ">=8.0.0"
   },
   "license": "MIT",
   "os": [
