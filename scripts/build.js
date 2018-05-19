@@ -80,20 +80,20 @@ function build(options) {
       return `--${flag}`;
     })
   ).join(' ');
-console.log(cmd);
-  // exec(cmd, function(error, stdout, stderr) {
-  //   if(!error) {
-  //     console.log('Binary successfully built!');
-  //     return;
-  //   } else if (error.code === 127 ) {
-  //     console.error(`node-gyp isn't available at: ${gyp}`);
-  //    } else {
-  //      console.error('Build failed with error code:', error.code);
-  //      console.info(error);
-  //    }
-  //
-  //    process.exit(1);
-  // });
+
+  exec(cmd, function(error, stdout, stderr) {
+    if(!error) {
+      console.log('Binary successfully built!');
+      return;
+    } else if (error.code === 127 ) {
+      console.error(`node-gyp isn't available at: ${gyp}`);
+     } else {
+       console.error('Build failed with error code:', error.code);
+       console.info(error);
+     }
+
+     process.exit(1);
+  });
 }
 
 /**
