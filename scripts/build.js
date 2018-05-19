@@ -30,11 +30,11 @@ function parse(args) {
  * Check Build to Verify Build Status
  */
 function check(options) {
-  console.log('Verifying Build!')
+  console.log('Verifying build...');
 
   if (options.force) {
     // Rebuild with force flag
-    return true;
+    return false;
   }
 
   const build = {
@@ -47,19 +47,19 @@ function check(options) {
   const isBinaryExist = fs.existsSync(binaryPath);
 
   try {
-    const wrapper = require(`../${pkg.main}`);
-
+    const Uchardet = require(`../${pkg.main}`);
+    const u = new Uchardet();
     // Rebuild on version mismatch
-    if(wrapper.version() !== pkg.version) {
-      console.log(`${wrapper.version()} !== ${pkg.version}`)
-      return true
+    if(u.version() !== pkg.libuchardet) {
+      console.log(`${u.version()} !== ${pkg.version}`)
+      return false;
     }
   } catch(e) {
     // Rebuild on bad builds
-    return true;
+    return false;
   }
 
-  return false;
+  return true;
 }
 
 /**
@@ -101,11 +101,11 @@ function build(options) {
  * Apply arguments and run
  */
 const options = parse(process.argv.slice(2));
-const doBuild = check(options);
+const verified = check(options);
 
-if(doBuild) {
+if(verified) {
+  console.log('Integrity of binary verified - no build is neccessary! [node-gyp rebuild uchardet --force]');
+} else {
   console.log('Starting build...');
   build(options);
-} else {
-  console.log('Integrity of binary verified - no build is neccessary! [node-gyp rebuild uchardet --force]');
 }
