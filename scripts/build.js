@@ -39,7 +39,7 @@ function check(options) {
 
   const build = {
     type: options.debug ? 'Debug' : 'Release',
-    version: pkg.version,
+    version: pkg.libuchardet,
     target: 'uchardet.node',
   };
 
@@ -68,6 +68,7 @@ function check(options) {
 function build(options) {
   const cmd = [
     path.normalize('./scripts/env.sh') + ' &&',
+    'CXXFLAGS="-fPIC"',
     'node',
     require.resolve(path.normalize('node-gyp/bin/node-gyp.js')),
     'rebuild'

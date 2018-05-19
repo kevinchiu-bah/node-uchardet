@@ -41,8 +41,8 @@
     "ava": "^0.25.0"
   },
   "scripts": {
-    "build": "scripts/env.sh && node-gyp rebuild",
-    "rebuild": "npm build",
+    "build": "node scripts/build.js",
+    "rebuild": "node scripts/build.js",
     "install": "node scripts/build.js",
     "generate": "node_modules/node-gyp/gyp/gyp -f cmake binding.gyp --depth .",
     "generate:xcode": "node-gyp configure -- -f xcode",
