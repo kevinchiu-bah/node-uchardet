@@ -82,7 +82,7 @@ function build(options) {
     })
   ).join(' ');
 
-  exec(cmd, function(error, stdout, , stderr) {
+  exec(cmd, function(error, stdout, stderr) {
     if(!error) {
       console.log('Binary successfully built!');
       return;
